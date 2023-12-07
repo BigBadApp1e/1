@@ -24,24 +24,24 @@ jobs:
 
     - name: Install dependencies
       run: |
-        install.packages("rmarkdown")
-        install.packages('tidyverse')
-        install.packages('patchwork')
-        install.packages('ggplot2')
-        install.packages('ggmap')
-        install.packages('plotly')
-        install.packages('mgcv')
-        install.packages('gganimate')
-        install.packages('readr')
-        install.packages('lubridate')
-        install.packages('dplyr')
-        install.packages('sf')
-        install.packages('scales')
-        install.packages('tidyr')
-        install.packages('stats')
-        install.packages('boot')
-        install.packages('caret')
-        install.packages('lmtest')
+        Rscript -e 'install.packages("rmarkdown")'
+        Rscript -e 'install.packages('tidyverse')'
+        Rscript -e 'install.packages('patchwork')'
+        Rscript -e 'install.packages('ggplot2')'
+        Rscript -e 'install.packages('ggmap')'
+        Rscript -e 'install.packages('plotly')'
+        Rscript -e 'install.packages('mgcv')'
+        Rscript -e 'install.packages('gganimate')'
+        Rscript -e 'install.packages('readr')'
+        Rscript -e 'install.packages('lubridate')'
+        Rscript -e 'install.packages('dplyr')'
+        Rscript -e 'install.packages('sf')'
+        Rscript -e 'install.packages('scales')'
+        Rscript -e 'install.packages('tidyr')'
+        Rscript -e 'install.packages('stats')'
+        Rscript -e 'install.packages('boot')'
+        Rscript -e 'install.packages('caret')'
+        Rscript -e 'install.packages('lmtest')'
 
     - name: Build Site
       run: Rscript -e 'rmarkdown::render_site()'
