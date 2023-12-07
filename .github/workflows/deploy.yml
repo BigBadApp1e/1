@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         Rscript -e 'install.packages("rmarkdown")'
-        Rscript -e 'install.packages('tidyverse')'
+        Rscript -e 'install.packages('tidyverse', dependencies = TRUE)'
         Rscript -e 'install.packages('patchwork')'
         Rscript -e 'install.packages('ggplot2')'
         Rscript -e 'install.packages('ggmap')'
