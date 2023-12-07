@@ -23,7 +23,25 @@ jobs:
         sudo apt-get install -y pandoc
 
     - name: Install dependencies
-      run: Rscript -e 'install.packages("rmarkdown")'  
+      run: |
+        install.packages("rmarkdown")
+        install.packages('tidyverse')
+        install.packages('patchwork')
+        install.packages('ggplot2')
+        install.packages('ggmap')
+        install.packages('plotly')
+        install.packages('mgcv')
+        install.packages('gganimate')
+        install.packages('readr')
+        install.packages('lubridate')
+        install.packages('dplyr')
+        install.packages('sf')
+        install.packages('scales')
+        install.packages('tidyr')
+        install.packages('stats')
+        install.packages('boot')
+        install.packages('caret')
+        install.packages('lmtest')
 
     - name: Build Site
       run: Rscript -e 'rmarkdown::render_site()'
