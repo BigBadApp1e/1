@@ -24,19 +24,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e 'install.packages("rmarkdown")'
-        Rscript -e "install.packages('tidyverse', dependencies = TRUE)"
-        Rscript -e "install.packages('patchwork')"
-        Rscript -e "install.packages('ggmap')"
-        Rscript -e "install.packages('plotly')"
-        Rscript -e "install.packages('mgcv')"
-        Rscript -e "install.packages('gganimate')"
-        Rscript -e "install.packages('lubridate')"
-        Rscript -e "install.packages('sf')"
-        Rscript -e "install.packages('scales')"
-        Rscript -e "install.packages('boot')"
-        Rscript -e "install.packages('caret')"
-        Rscript -e "install.packages('lmtest')"
+        Rscript -e "install.packages(c('rmarkdown', 'tidyverse', 'patchwork', 'ggmap', 'plotly', 'mgcv', 'gganimate', 'lubridate', 'sf', 'scales', 'boot', 'caret', 'lmtest'), dependencies = TRUE)"
+
+    - name: Test loading tidyverse
+      run: Rscript -e "library(tidyverse)"
 
     - name: Build Site
       run: Rscript -e 'rmarkdown::render_site()'
